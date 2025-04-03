@@ -1,0 +1,33 @@
+<app-missionfilter (yearChanged)="filterByYear($event)"></app-missionfilter>
+
+<div>
+  <ul>
+    <li class="mission-header" *ngFor="let mission of missions">
+      <a href="#" (click)="viewDetails(mission.flight_number); $event.preventDefault()">
+        <div class="mission-card">
+
+          <!-- Fix typo: 'imgage' → 'image' -->
+          <div class="image">
+            <img 
+              *ngIf="mission.links?.mission_patch_small; else NoImage" 
+              [src]="mission.links.mission_patch_small" 
+              alt="patch" 
+              class="patch-img"
+            >
+            <ng-template #NoImage>
+              <img src="assets/NoImage.jpeg" alt="NoImage" class="patch-img">
+              <!-- ✅ Ensure NoImage.jpeg is inside src/assets -->
+            </ng-template>
+          </div>
+
+          <div>
+            <h2>{{ mission.mission_name }}</h2>
+            <h4>{{ mission.launch_year }}</h4>
+            <p>{{ mission.details || 'No mission details available.' }}</p>
+          </div>
+
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>

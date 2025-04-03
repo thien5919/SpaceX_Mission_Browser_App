@@ -1,0 +1,37 @@
+<form (ngSubmit)="applyFilter()" #filterForm="ngForm">
+    <label for="year"><b>Filter by Launch Year:</b></label>
+    <input id="year" name="year" type="text" [(ngModel)]="year" required>
+    <button type="submit" [disabled]="!filterForm.form.valid">Filter</button>
+  
+    <br><br>
+  
+    <fieldset>
+      <legend><b>Launch Success</b></legend>
+      <label for="launchSuccessTrue">
+        <input type="radio" id="launchSuccessTrue" name="launchSuccess" [(ngModel)]="launchSuccess" [value]="true">
+        Successful
+      </label>
+      <label for="launchSuccessFalse">
+        <input type="radio" id="launchSuccessFalse" name="launchSuccess" [(ngModel)]="launchSuccess" [value]="false">
+        Failed
+      </label>
+    </fieldset>
+  
+    <br>
+  
+    <fieldset>
+      <legend><b>Landing Success</b></legend>
+      <label for="landingSuccessTrue">
+        <input type="radio" id="landingSuccessTrue" name="landingSuccess" [(ngModel)]="landingSuccess" [value]="true">
+        Successful
+      </label>
+      <label for="landingSuccessFalse">
+        <input type="radio" id="landingSuccessFalse" name="landingSuccess" [(ngModel)]="landingSuccess" [value]="false">
+        Failed
+      </label>
+    </fieldset>
+  
+    <br>
+    <button type="button" (click)="resetFilters()">Reset Filters</button>
+  </form>
+  

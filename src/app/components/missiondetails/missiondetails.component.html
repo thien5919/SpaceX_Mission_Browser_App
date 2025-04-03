@@ -1,0 +1,25 @@
+<div class="mission-details-container">
+    <img
+      [src]="mission.links.mission_patch_small || 'assets/NoImage.jpeg'"
+      alt="Mission Patch"
+      class="patch-img"
+    >
+  
+    <h2>Mission - {{ mission.mission_name }}</h2>
+  
+    <hr>
+    <h3>Rocket</h3>
+    <p><strong>Name:</strong> {{ mission.rocket.rocket_name }}</p>
+    <p><strong>Type:</strong> {{ mission.rocket.rocket_type }}</p>
+  
+    <hr>
+    <h3>Launch Site</h3>
+    <p><strong>Name:</strong> {{ mission.launch_site.site_name_long }}</p>
+  
+    <hr>
+    <h3>Launch Details</h3>
+    <p>{{ mission.details || 'No mission details available.' }}</p>
+  
+    <button (click)="goBack()" class="back-button">Back</button>
+  </div>
+  
