@@ -1,5 +1,4 @@
-# COMP3133 - Lab Test 2  
-### SpaceX Mission Browser App (Angular Standalone)
+# SpaceX Mission Browser App (Angular Standalone)
 
 This project is a standalone Angular application that allows users to browse and filter SpaceX missions using data from the SpaceX API. Users can:
 
